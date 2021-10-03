@@ -1,0 +1,30 @@
+.bodyDiv {
+    height: 100vh;
+    margin: 0px;
+    overflow-y: hidden;
+    background-color: aqua;
+}
+
+div.bodyContainer {
+    margin-top: 20px !important;
+}
+
+.tabs a {
+    color: #FBBC05;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.tabs .active {
+    background: #FBBC05;
+    color: white;
+}
+
+.auth-content {
+    height: 515px !important;
+}
+
+.tabs .tab a:focus, .tabs .tab a:focus.active {
+    background-color: #FBBC05;
+    color: white;
+}

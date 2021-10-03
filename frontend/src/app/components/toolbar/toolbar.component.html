@@ -1,0 +1,55 @@
+<nav class="nav-extended">
+    <div class="container-fluid" style="padding-left: 20px; padding-right: 20px; ">
+        <div class="nav-wrapper" >
+            <a (click)="GoToHome()" class="brand-logo">HI 5</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+              
+                <li class="dropdown-button dropdown-trigger1" data-target="dropdown1">
+                    
+                    <i class="material-icons">chat</i>
+                  
+                    
+                    <ul id='dropdown1' class='dropdown-content col s12 collection'>
+                        <li class="collection-item avatar" *ngFor="let chat of chatList" (click)="GoToChatPage(chat.receiverId.username)">
+                            <img src="http://res.cloudinary.com/duojkrgue/image/upload/v{{chat.receiverId.picVersion}}/{{chat.receiverId.picId}}" class="circle">
+                            <span class="title">
+                              {{chat.receiverId.username}}
+                              <a class="secondary-content">
+                                {{MessageDate(chat.msgId.message[chat.msgId.message.length-1].createdAt)}}
+                              </a>
+                            </span>
+                            <p>
+                                {{chat.msgId.message[chat.msgId.message.length-1].body}}
+                                <a class="secondary-content" *ngIf="!chat.msgId.message[chat.msgId.message.length-1].isRead && chat.receiverId.username !== chat.msgId.message[chat.msgId.message.length-1].receivername">
+                                </a>
+                                <a class="secondary-content" *ngIf="chat.msgId.message[chat.msgId.message.length-1].isRead">
+                                </a>
+                            </p>
+                        </li>
+                        <li *ngIf="notifcations.length <= 0">
+                            <p class="text">No Notification</p>
+                        </li>
+                        <p class="secondary-content">
+                            <a class="markAll btn" (click)="MarkAllMessages()">Mark All As Read</a>
+                        </p>
+                    </ul>
+                </li>
+                <li>
+                    <a (click)="logout()">Logout</a>
+                </li>
+            </ul>
+        </div>
+        <div class="nav-content">
+            <div class="nav-div">
+                <div *ngIf="imgUrl">
+                    <img class="circle responsive-img" src="http://res.cloudinary.com/duojkrgue/image/upload/v{{imageVersion}}/{{imageId}}">
+                </div>
+                <div *ngIf="!imgUrl">
+                    <img class="circle responsive-img" src="../../../assets/original.png">
+                </div>
+            </div>
+            <h1 class="profile-name">{{user.username}}</h1>
+            <!-- <p class="user-text">This is a test</p> -->
+        </div>
+    </div>
+</nav>

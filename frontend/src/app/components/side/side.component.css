@@ -1,0 +1,34 @@
+a {
+  color: rgb(2, 0, 0);
+}
+
+.active a {
+  color: #180202 !important;
+}
+
+.active {
+  background-color: #FBBC05!important;
+}
+
+.material-icons {
+  color: #FBBC05;
+}
+
+.active .material-icons {
+  color: #ffffff;
+}
+
+.row span {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.num {
+  margin: 0 !important;
+  color: #FBBC05;
+  font-weight: bold;
+  font-size: 16px;
+}
+/* .blue-color {
+  color:#64b5f6;
+  } */
